@@ -10,6 +10,16 @@ This library utilizes the MutationObserver API to detect when new components are
 
 # Installation
 
+This package relies on React 18+ and ReactDOM 18+ for rendering.  You can install this package:
+
+With npm
+
+    npm install @cchoe1/react-component-registration
+
+With yarn
+
+    yarn add @cchoe1/react-component-registration
+
 # Usage
 
 Assuming you have a basic component as such:
