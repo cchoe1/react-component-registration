@@ -1,0 +1,50 @@
+{
+  "name": "@cchoe1/react-component-registration",
+  "version": "1.0.0",
+  "description": "Allows for assigning components to custom HTML tags",
+  "main": "./lib/cjs/index.js",
+  "types": "./lib/cjs/types/index.d.ts",
+  "scripts": {
+    "clean": "rm -rf ./lib",
+    "build": "npm run clean && npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc -p ./configs/tsconfig.esm.json && mv lib/esm/index.js lib/esm/index.mjs",
+    "build:cjs": "tsc -p ./configs/tsconfig.cjs.json",
+    "prepack": "npm run build"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beef-jerky-experience/react-component-registration"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Calvin Choe",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./lib/esm/types/index.d.ts",
+        "default": "./lib/esm/index.mjs"
+      },
+      "require": {
+        "types": "./lib/cjs/types/index.d.ts",
+        "default": "./lib/cjs/index.js"
+      }
+    }
+  },
+  "bugs": {
+    "url": "https://github.com/cchoe1/react-component-registration/issues"
+  },
+  "homepage": "https://github.com/cchoe1/react-component-registration#readme",
+  "dependencies": {
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "@types/react": "^18",
+    "@types/react-dom": "^18"
+  }
+}
