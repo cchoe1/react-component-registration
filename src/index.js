@@ -71,3 +71,4 @@ class Registrar {
   }
 }
 
+export default Registrar;
